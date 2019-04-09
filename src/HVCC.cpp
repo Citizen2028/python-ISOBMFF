@@ -143,7 +143,7 @@ void init_ISOBMFF_HVCC_hpp() {
         .def("GetArrays", &ISOBMFF::HVCC::GetArrays)
         .def("AddArray", &ISOBMFF::HVCC::AddArray)
         ;
-    boost::python::class_<ArrayWrapper, boost::python::bases<XS::PIMPL::Object<ISOBMFF::HVCC::Array>, ISOBMFF::DisplayableObject, ISOBMFF::DisplayableObjectContainer>, std::shared_ptr<ISOBMFF::HVCC::Array>>("Array")
+    boost::python::class_<ArrayWrapper, boost::python::bases<ISOBMFF::DisplayableObject, ISOBMFF::DisplayableObjectContainer>, std::shared_ptr<ISOBMFF::HVCC::Array>>("Array")
         .def(boost::python::init<ISOBMFF::BinaryStream &>())
         .def("GetName", &ISOBMFF::HVCC::Array::GetName)
         .def("GetArrayCompleteness", &ISOBMFF::HVCC::Array::GetArrayCompleteness)
@@ -156,7 +156,7 @@ void init_ISOBMFF_HVCC_hpp() {
         .def("GetNALUnits", &ISOBMFF::HVCC::Array::GetNALUnits)
         .def("AddNALUnit", &ISOBMFF::HVCC::Array::AddNALUnit)
         ;
-    boost::python::class_<NALUnitWrapper, boost::python::bases<XS::PIMPL::Object<ISOBMFF::HVCC::Array::NALUnit>, ISOBMFF::DisplayableObject>, std::shared_ptr<ISOBMFF::HVCC::Array::NALUnit>>("NALUnit")
+    boost::python::class_<NALUnitWrapper, boost::python::bases<ISOBMFF::DisplayableObject>, std::shared_ptr<ISOBMFF::HVCC::Array::NALUnit>>("NALUnit")
         .def(boost::python::init<ISOBMFF::BinaryStream &>())
         .def("GetName", &ISOBMFF::HVCC::Array::NALUnit::GetName)
         .def("GetData", &ISOBMFF::HVCC::Array::NALUnit::GetData)

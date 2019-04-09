@@ -135,7 +135,7 @@ void init_ISOBMFF_ILOC_hpp() {
         .def("GetExtents", &ISOBMFF::ILOC::Item::GetExtents)
         .def("AddExtent", &ISOBMFF::ILOC::Item::AddExtent)
         ;
-    boost::python::class_<ExtentWrapper, boost::python::bases<XS::PIMPL::Object<ISOBMFF::ILOC::Item::Extent>, ISOBMFF::DisplayableObject>, std::shared_ptr<ISOBMFF::ILOC::Item::Extent>>("Extent")
+    boost::python::class_<ExtentWrapper, boost::python::bases<ISOBMFF::DisplayableObject>, std::shared_ptr<ISOBMFF::ILOC::Item::Extent>>("Extent")
         .def(boost::python::init<ISOBMFF::BinaryStream &, const ISOBMFF::ILOC &>())
         .def("GetName", &ISOBMFF::ILOC::Item::Extent::GetName)
         .def("GetIndex", &ISOBMFF::ILOC::Item::Extent::GetIndex)
